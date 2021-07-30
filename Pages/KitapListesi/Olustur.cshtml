@@ -1,0 +1,55 @@
+﻿@page
+@model kitap_listeleme_app.Pages.KitapListesi.OlusturModel
+
+<br />
+<h2 class="text-info">Yeni Kitap Ekle</h2>
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Kitap.KitapAd"></label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" asp-for="Kitap.KitapAd" />
+            </div>
+            <span asp-validation-for="Kitap.KitapAd" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Kitap.Yazar"></label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" asp-for="Kitap.Yazar" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Kitap.ISBN"></label>
+            </div>
+            <div class="col-6">
+                <input class="form-control" asp-for="Kitap.ISBN" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" class="btn btn-primary form-control" value="Olustur" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-success form-control">Kitaplara Geri Dön</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial"/>
+}
+
